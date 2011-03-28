@@ -1,0 +1,29 @@
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\bin\Debug\mcsLaunch.exe
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\bin\Debug\mcsLaunch.pdb
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\mcsLaunch.Properties.Resources.resources
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\mcsLaunch.exe
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\mcsLaunch.pdb
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\mcsLaunch.MainForm.resources
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\bin\Debug\mcsLaunch.exe.config
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\mcsLaunch.Prompt.resources
+C:\Users\Daniel\AppData\Local\Temporary Projects\mcsLaunch\obj\x86\Debug\mcsLaunch.SettingsForm.resources
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\bin\Debug\mcsLaunch.exe.config
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.exe
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.pdb
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\bin\Debug\mcsLaunch.exe
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\bin\Debug\mcsLaunch.pdb
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.SettingsForm.resources
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.MainForm.resources
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.Properties.Resources.resources
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\bin\Debug\mcsLaunch.exe.manifest
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\bin\Debug\mcsLaunch.application
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.exe.manifest
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.application
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.ProgressForm.resources
+C:\Users\Daniel\documents\visual studio 2010\Projects\mcsLaunch\mcsLaunch\obj\x86\Debug\mcsLaunch.PromptForm.resources
