@@ -5,9 +5,6 @@ namespace mcsLaunch
 {
     static class Program
     {
-        public static bool MarkedForUpdate = false;
-        public static MainForm MainForm;
-
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,12 +13,7 @@ namespace mcsLaunch
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            MainForm = new MainForm(args);
-            Application.Run(MainForm);
-            if (MarkedForUpdate)
-            {
-                Updater.UpdateApplication(true);
-            }
+            Application.Run(new MainForm(args));
         }
     }
 }

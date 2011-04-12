@@ -17,6 +17,7 @@ namespace mcsLaunch
 
         private void LoadSettings()
         {
+            Settings = MainForm.Settings;
             checknow = false;
             chkRemUser.Checked = Settings.RememberUsername;
             if (chkRemUser.Checked)
@@ -92,19 +93,21 @@ namespace mcsLaunch
                 txtToShow.Text = "5";
                 Settings.NotchPostsToShow = 5;
             }
+            MainForm.Settings = Settings;
         }
 
         private void btnSetup_Click(object sender, EventArgs e)
         {
             Save();
             MainForm.Setup();
+            Save();
             LoadSettings();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            Save();
             MainForm.LoadDefaultSettings();
+            Save();
             LoadSettings();
         }
 
@@ -186,6 +189,7 @@ namespace mcsLaunch
                 txtServer.Enabled = true;
                 btnRemove.Enabled = true;
                 btnSave.Enabled = true;
+                Settings.DefaultServerIndex = lstServers.SelectedIndex;
             }
             catch
             {

@@ -56,7 +56,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(220, 11);
+            this.btnClose.Location = new System.Drawing.Point(220, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 30);
             this.btnClose.TabIndex = 30;
@@ -73,13 +73,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 338);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 53);
+            this.panel1.Size = new System.Drawing.Size(307, 54);
             this.panel1.TabIndex = 11;
             // 
             // btnReset
             // 
-            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReset.Location = new System.Drawing.Point(58, 11);
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReset.Location = new System.Drawing.Point(12, 12);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 30);
             this.btnReset.TabIndex = 32;
@@ -89,8 +89,8 @@
             // 
             // btnSetup
             // 
-            this.btnSetup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSetup.Location = new System.Drawing.Point(139, 11);
+            this.btnSetup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSetup.Location = new System.Drawing.Point(94, 12);
             this.btnSetup.Name = "btnSetup";
             this.btnSetup.Size = new System.Drawing.Size(75, 30);
             this.btnSetup.TabIndex = 31;
@@ -289,8 +289,9 @@
             // 
             // SettingsForm
             // 
+            this.AcceptButton = this.btnClose;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(307, 391);
+            this.ClientSize = new System.Drawing.Size(307, 392);
             this.Controls.Add(this.txtToShow);
             this.Controls.Add(this.chkNotchBlog);
             this.Controls.Add(this.chkLaunchOnStartup);

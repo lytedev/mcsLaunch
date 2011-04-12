@@ -7,12 +7,17 @@ namespace mcsLaunch
 {
     public class Updater
     {
-        public static string ExecutableUrl { get { return "http://lytedev.flansite.com/files/mcsLaunch/mcsLaunch.exe"; } }
+        /* public static string ExecutableUrl { get { return "http://lytedev.flansite.com/files/mcsLaunch/mcsLaunch.exe"; } }
         public static string VersionUrl { get { return "http://lytedev.flansite.com/files/mcsLaunch/version.txt"; } }
         public static string UpdaterUrl { get { return "http://lytedev.flansite.com/files/mcsLaunch/mcsLaunchUpdater.exe"; } }
         public static string UpdaterLocalName { get { return "mcsLaunchUpdater.exe"; } }
         public static Version VersionData = new Version(System.Windows.Forms.Application.ProductVersion);
         public static string VersionString { get { return VersionData.Major + "." + VersionData.Minor + "." + VersionData.Build; } }
+
+        public Updater()
+        {
+
+        }
 
         public static void CheckForUpdates()
         {
@@ -27,7 +32,6 @@ namespace mcsLaunch
             if (VersionString.ToLower().Trim() != latestVersion.ToLower().Trim())
             {
                 Program.MarkedForUpdate = true;
-                Program.MainForm.BeginInvoke(new System.Windows.Forms.MethodInvoker(delegate() { Program.MainForm.Text += "*"; }));
             }
             else
             {
@@ -61,6 +65,6 @@ namespace mcsLaunch
                 mcslu.StartInfo.Arguments += " dontrun";
             }
             mcslu.Start();
-        }
+        } */
     }
 }

@@ -4,7 +4,7 @@
   <description asmv2:iconFile="mcslicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="mcsLaunch" version="1.12.9.0" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="mcsLaunch" version="1.13.11.23579" language="neutral" processorArchitecture="x86" />
     <commandLine file="mcsLaunch.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,26 +43,17 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mcsLaunch.exe" size="116224">
-      <assemblyIdentity name="mcsLaunch" version="1.12.9.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mcsLaunch.exe" size="148480">
+      <assemblyIdentity name="mcsLaunch" version="1.13.11.23579" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>EY9DJlxW+XdPjlXpFzgy4lLKXzg=</dsig:DigestValue>
+        <dsig:DigestValue>AlhJkoiL6ysrN9QSQhlIEAIKNE4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="mcsLaunch.exe.config" size="2757">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PaU/o/KIOfIyX8ciKX65gw/B3LY=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="mcslicon.ico" size="34494">
     <hash>
       <dsig:Transforms>

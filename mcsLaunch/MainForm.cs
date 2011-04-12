@@ -18,23 +18,9 @@ namespace mcsLaunch
             webNotchBlog.Navigate("about:blank");
             Settings = Settings.Load();
 
-            if (File.Exists("version.txt"))
-            {
-
-            }
-            else
-            {
-                // Settings.Servers.Add(new Server("server info", "server nickname"));
-                // None!
-                // End Sponsored Servers
-                StreamWriter sw = new StreamWriter(new FileStream("version.txt", FileMode.Create, FileAccess.Write));
-                sw.Write(Updater.VersionString);
-                sw.Close();
-            }
-
             if (File.Exists(Settings.LauncherFile))
             {
-
+                
             }
             else
             {
@@ -50,7 +36,6 @@ namespace mcsLaunch
                 }
             }
 
-            this.Text += " " + Updater.VersionString;
             RefreshServers();
 
             if (Settings.LaunchOnStartup)
@@ -92,7 +77,7 @@ namespace mcsLaunch
             }
             if (manual)
             {
-                PromptForm p = new PromptForm("Minecraft Launcher", "The location of \"Minecraft.exe\" (the launcher):", Properties.Settings.Default.LauncherFile, true, PromptForm.AllFilesFilter);
+                PromptForm p = new PromptForm("Minecraft Launcher", "The location of \"Minecraft.exe\" (the launcher):", Settings.LauncherFile, true, PromptForm.AllFilesFilter);
                 DialogResult dr = p.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
@@ -103,7 +88,7 @@ namespace mcsLaunch
                     }
                     else
                     {
-                        p = new PromptForm("Old Minecraft Launcher", "The location of the old \"Minecraft.exe\":", Properties.Settings.Default.OldLauncherFile, true, PromptForm.AllFilesFilter);
+                        p = new PromptForm("Old Minecraft Launcher", "The location of the old \"Minecraft.exe\":", Settings.OldLauncherFile, true, PromptForm.AllFilesFilter);
                         if (p.ShowDialog() != DialogResult.Cancel)
                         {
                             Settings.SpecifiedOldLauncher = false;
@@ -140,10 +125,13 @@ namespace mcsLaunch
         private void RefreshServers()
         {
             cbxServers.Items.Clear();
+            lstServers.Items.Clear();
             cbxServers.Items.Add("Don't auto-join (None)");
+            lstServers.Items.Add("Don't auto-join (None)");
             for (int i = 0; i < Settings.Servers.Count; i++)
             {
                 cbxServers.Items.Add(ServerToString(Settings.Servers[i]));
+                lstServers.Items.Add(ServerToString(Settings.Servers[i]));
             }
             try
             {
@@ -154,10 +142,9 @@ namespace mcsLaunch
                 cbxServers.SelectedIndex = 0;
             }
 
-
             if (Settings.ShowNotchBlog)
             {
-                this.MinimumSize = new Size(188, 250);
+                this.MinimumSize = new Size(272, 250);
                 this.MaximumSize = new Size(0, 0);
                 webNotchBlog.Visible = true;
                 webNotchBlog.Navigate("about:blank");
@@ -166,10 +153,11 @@ namespace mcsLaunch
             }
             else
             {
-                this.MinimumSize = new Size(200, 190);
-                this.MaximumSize = new Size(9001, 190); 
+                this.MinimumSize = new Size(272, 190);
+                this.MaximumSize = new Size(0, 0); 
                 webNotchBlog.Visible = false;
             }
+            useListOrCombo();
         }
 
         public void SaveSettings()
@@ -331,7 +319,7 @@ namespace mcsLaunch
             {
                 this.Location = new Point(this.Location.X, (Screen.PrimaryScreen.Bounds.Height / 2) - (this.Height / 2));
             }
-            new System.Threading.Thread(new System.Threading.ThreadStart(Updater.CheckForUpdates)).Start();
+            // new System.Threading.Thread(new System.Threading.ThreadStart(Updater.CheckForUpdates)).Start();
             this.BringToFront();
         }
 
@@ -576,6 +564,104 @@ background-color:" + bgl + @";}
                 e.Cancel = true;
                 System.Diagnostics.Process.Start(e.Url.ToString());
             }
+        }
+
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    try
+                    {
+                        cbxServers.SelectedIndex--;
+                        if (cbxServers.SelectedIndex == -1)
+                        {
+                            cbxServers.SelectedIndex = 0;
+                        }
+                    }
+                    catch
+                    {
+                        cbxServers.SelectedIndex = 0;
+                    }
+                    e.Handled = true;
+                    break;
+                case Keys.Down:
+                    try
+                    {
+                        cbxServers.SelectedIndex++;
+                    }
+                    catch
+                    {
+                        cbxServers.SelectedIndex = cbxServers.Items.Count - 1;
+                    }
+                    e.Handled = true;
+                    break;  
+            }
+        }
+
+        private void cbxServers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstServers.SelectedIndex != cbxServers.SelectedIndex)
+            {
+                lstServers.SelectedIndex = cbxServers.SelectedIndex;
+            }
+        }
+
+        private void useListOrCombo()
+        {
+            if (!Settings.ShowNotchBlog)
+            {
+                if (this.Size.Height > this.MinimumSize.Height)
+                {
+                    cbxServers.Visible = false;
+                    lstServers.Visible = true;
+                }
+                else
+                {
+                    cbxServers.Visible = true;
+                    lstServers.Visible = false;
+                }
+            }
+            else if (Settings.ShowNotchBlog && lstServers.Visible)
+            {
+                lstServers.Visible = false;
+                cbxServers.Visible = true;
+            }
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            useListOrCombo();
+        }
+
+        private void lstServers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstServers.SelectedIndex != cbxServers.SelectedIndex)
+            {
+                try
+                {
+                    cbxServers.SelectedIndex = lstServers.SelectedIndex;
+                }
+                catch
+                {
+                    RefreshServers();
+                }
+            }
+            if (cbxServers.SelectedIndex == -1)
+            {
+                cbxServers.SelectedIndex = 0;
+            }
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            HelpForm hf = new HelpForm();
+            hf.ShowDialog();
+        }
+
+        private void lstServers_DoubleClick_1(object sender, EventArgs e)
+        {
+            Launch();
         }
     }
 }
