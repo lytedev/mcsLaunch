@@ -14,11 +14,15 @@
 #### v.1.12.9 : March 27th, 2011
 * Updating is now automatic and silent. 
 
+#### v.1.14.11 : May 5th, 2011
+* Login information is encrypted in the settings file. 
+* Help menu added. 
+
 ## Todo: 
 * Clean up ugly code
-* Dynamic settings fields
-* Load "plugin DLLs"
 * Load sponsor servers from online list not on initial run
+* Load "plugin DLLs"...? 
+* Dynamic settings fields
 
 ## Contributors: 
 * Daniel Flanagan 
