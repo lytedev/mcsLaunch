@@ -72,7 +72,7 @@
             this.panel1.Controls.Add(this.btnSetup);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 362);
+            this.panel1.Location = new System.Drawing.Point(0, 303);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(307, 54);
             this.panel1.TabIndex = 11;
@@ -189,7 +189,7 @@
             this.lstServers.ItemHeight = 15;
             this.lstServers.Location = new System.Drawing.Point(12, 220);
             this.lstServers.Name = "lstServers";
-            this.lstServers.Size = new System.Drawing.Size(283, 78);
+            this.lstServers.Size = new System.Drawing.Size(283, 19);
             this.lstServers.TabIndex = 14;
             this.lstServers.SelectedIndexChanged += new System.EventHandler(this.lstServers_SelectedIndexChanged);
             // 
@@ -197,7 +197,7 @@
             // 
             this.txtNickname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNickname.Location = new System.Drawing.Point(82, 333);
+            this.txtNickname.Location = new System.Drawing.Point(82, 274);
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(132, 23);
             this.txtNickname.TabIndex = 18;
@@ -206,7 +206,7 @@
             // lblNickname
             // 
             this.lblNickname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblNickname.Location = new System.Drawing.Point(12, 333);
+            this.lblNickname.Location = new System.Drawing.Point(12, 274);
             this.lblNickname.Name = "lblNickname";
             this.lblNickname.Size = new System.Drawing.Size(64, 23);
             this.lblNickname.TabIndex = 17;
@@ -216,7 +216,7 @@
             // lblServer
             // 
             this.lblServer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblServer.Location = new System.Drawing.Point(12, 304);
+            this.lblServer.Location = new System.Drawing.Point(12, 245);
             this.lblServer.Name = "lblServer";
             this.lblServer.Size = new System.Drawing.Size(64, 23);
             this.lblServer.TabIndex = 15;
@@ -227,7 +227,7 @@
             // 
             this.txtServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtServer.Location = new System.Drawing.Point(82, 304);
+            this.txtServer.Location = new System.Drawing.Point(82, 245);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(132, 23);
             this.txtServer.TabIndex = 16;
@@ -237,7 +237,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(220, 333);
+            this.btnSave.Location = new System.Drawing.Point(220, 274);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 20;
@@ -248,7 +248,7 @@
             // btnRemove
             // 
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemove.Location = new System.Drawing.Point(220, 304);
+            this.btnRemove.Location = new System.Drawing.Point(220, 245);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 19;
@@ -303,7 +303,7 @@
             // 
             this.AcceptButton = this.btnClose;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(307, 416);
+            this.ClientSize = new System.Drawing.Size(307, 357);
             this.Controls.Add(this.chkEncrypt);
             this.Controls.Add(this.txtToShow);
             this.Controls.Add(this.chkNotchBlog);
@@ -325,7 +325,7 @@
             this.Controls.Add(this.chkRemUser);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinimumSize = new System.Drawing.Size(315, 367);
+            this.MinimumSize = new System.Drawing.Size(315, 385);
             this.Name = "SettingsForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
