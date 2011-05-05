@@ -4,7 +4,7 @@
   <description asmv2:iconFile="mcslicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="mcsLaunch" version="1.14.11.24774" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="mcsLaunch" version="1.14.11.26371" language="neutral" processorArchitecture="x86" />
     <commandLine file="mcsLaunch.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,13 +44,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mcsLaunch.exe" size="151552">
-      <assemblyIdentity name="mcsLaunch" version="1.14.11.24774" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="mcsLaunch" version="1.14.11.26371" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>l49pr+W4T4PHFxwr3TJXK4DnaIM=</dsig:DigestValue>
+        <dsig:DigestValue>BpozMxXJ0Cke6UH6GrtQmfw/W6o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
