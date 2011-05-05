@@ -48,6 +48,7 @@ namespace mcsLaunch
             checknow = true;
             chkLaunchOnStartup.Checked = false;
             chkLaunchOnStartup.Checked = Settings.LaunchOnStartup;
+            chkEncrypt.Checked = Settings.EncryptLoginInfo;
             chkNotchBlog.Checked = Settings.ShowNotchBlog;
             txtToShow.Text = "" + Settings.NotchPostsToShow;
             RefreshServers();
@@ -76,6 +77,7 @@ namespace mcsLaunch
             Settings.UseOldLauncher = chkUseOldLaunch.Checked;
             Settings.CloseOnLaunch = chkCloseOnLaunch.Checked;
             Settings.ShowNotchBlog = chkNotchBlog.Checked;
+            Settings.EncryptLoginInfo = chkEncrypt.Checked;
             if (Settings.ShowNotchBlog && Settings.NotchPostsToShow < 1)
             {
                 Settings.NotchPostsToShow = 5;
@@ -301,6 +303,14 @@ namespace mcsLaunch
         private void chkNotchBlog_CheckedChanged(object sender, EventArgs e)
         {
             txtToShow.Enabled = chkNotchBlog.Checked;
+        }
+
+        private void chkEncrypt_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEncrypt.Checked == false)
+            {
+                chkEncrypt.Checked = DialogResult.Yes != MessageBox.Show("By disabling encrypted login information, your username and password will be stored as plain text on the file system. Only disable this if you use mcsLaunch in a highly portable manner. It is recommended you simply input your password each time instead.\n\nDo you still want to disable encryption?", "Disable encryption?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -12,23 +12,29 @@ namespace mcsLaunch
         public static Version VersionData = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
         public static string VersionString { get { return VersionData.Major + "." + VersionData.Minor + "." + VersionData.Build; } }
         
-        public void Save(string file = "")
+        public void Save(string file = "", bool encrypted = true)
         {
             if (file == "")
             {
                 file = SettingsFile;
             }
-            Password = EncryptString(Password, EncryptionKey);
-            Username = EncryptString(Username, EncryptionKey);
+            if (encrypted)
+            {
+                Password = EncryptString(Password, EncryptionKey);
+                Username = EncryptString(Username, EncryptionKey);
+            }
             System.Runtime.Serialization.Formatters.Binary.BinaryFormatter bf = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
             System.IO.FileStream fs = new System.IO.FileStream(file, System.IO.FileMode.Create, System.IO.FileAccess.Write);
             bf.Serialize(fs, this);
             fs.Close();
-            Password = DecryptString(Password, EncryptionKey);
-            Username = EncryptString(Username, EncryptionKey);
+            if (encrypted)
+            {
+                Password = DecryptString(Password, EncryptionKey);
+                Username = EncryptString(Username, EncryptionKey);
+            }
         }
 
-        public static Settings Load(string file = "")
+        public static Settings Load(string file = "", bool encrypted = true)
         {
             if (file == "")
             {
@@ -40,8 +46,11 @@ namespace mcsLaunch
                 System.IO.FileStream fs = new System.IO.FileStream(file, System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 Settings s = (Settings)bf.Deserialize(fs);
                 fs.Close();
-                s.Password = DecryptString(s.Password, EncryptionKey);
-                s.Username = DecryptString(s.Username, EncryptionKey);
+                if (encrypted)
+                {
+                    s.Password = DecryptString(s.Password, EncryptionKey);
+                    s.Username = DecryptString(s.Username, EncryptionKey);
+                }
                 return s;
             }
             return Defaults;
@@ -66,6 +75,7 @@ namespace mcsLaunch
                 s.CloseOnLaunch = true;
                 s.LaunchOnStartup = false;
                 s.ShowNotchBlog = true;
+                s.EncryptLoginInfo = true;
 
                 s.LauncherFile = "";
                 s.OldLauncherFile = "";
@@ -88,6 +98,7 @@ namespace mcsLaunch
         public bool CloseOnLaunch { get; set; }
         public bool LaunchOnStartup { get; set; }
         public bool ShowNotchBlog { get; set; }
+        public bool EncryptLoginInfo { get; set; }
 
         public string LauncherFile { get; set; }
         public string OldLauncherFile { get; set; }
