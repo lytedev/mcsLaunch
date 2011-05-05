@@ -101,59 +101,72 @@ namespace mcsLaunch
 
         public static string EncryptString(string str, string key)
         {
-            if (String.IsNullOrEmpty(str) || String.IsNullOrWhiteSpace(str))
-            {
-                return "";
-            }
-            byte[] results;
-            System.Text.UTF8Encoding utf8 = new System.Text.UTF8Encoding();
-            MD5CryptoServiceProvider hashProvider = new MD5CryptoServiceProvider();
-            byte[] tdesKey = hashProvider.ComputeHash(utf8.GetBytes(key));
-            TripleDESCryptoServiceProvider tdesAlgorithm = new TripleDESCryptoServiceProvider();
-            tdesAlgorithm.Key = tdesKey;
-            tdesAlgorithm.Mode = CipherMode.ECB;
-            tdesAlgorithm.Padding = PaddingMode.PKCS7;
-            byte[] DataToEncrypt = utf8.GetBytes(str);
             try
             {
-                ICryptoTransform Encryptor = tdesAlgorithm.CreateEncryptor();
-                results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length);
+                if (String.IsNullOrEmpty(str) || String.IsNullOrWhiteSpace(str))
+                {
+                    return "";
+                }
+                byte[] results;
+                System.Text.UTF8Encoding utf8 = new System.Text.UTF8Encoding();
+                MD5CryptoServiceProvider hashProvider = new MD5CryptoServiceProvider();
+                byte[] tdesKey = hashProvider.ComputeHash(utf8.GetBytes(key));
+                TripleDESCryptoServiceProvider tdesAlgorithm = new TripleDESCryptoServiceProvider();
+                tdesAlgorithm.Key = tdesKey;
+                tdesAlgorithm.Mode = CipherMode.ECB;
+                tdesAlgorithm.Padding = PaddingMode.PKCS7;
+                byte[] DataToEncrypt = utf8.GetBytes(str);
+                try
+                {
+                    ICryptoTransform Encryptor = tdesAlgorithm.CreateEncryptor();
+                    results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length);
+                }
+                finally
+                {
+                    tdesAlgorithm.Clear();
+                    hashProvider.Clear();
+                }
+                return Convert.ToBase64String(results);
             }
-            finally
+            catch
             {
-                tdesAlgorithm.Clear();
-                hashProvider.Clear();
+                return str;
             }
-
-            return Convert.ToBase64String(results);
         }
 
         public static string DecryptString(string str, string key)
         {
-            if (String.IsNullOrEmpty(str) || String.IsNullOrWhiteSpace(str))
-            {
-                return "";
-            }
-            byte[] results;
-            System.Text.UTF8Encoding utf8 = new System.Text.UTF8Encoding();
-            MD5CryptoServiceProvider hashProvider = new MD5CryptoServiceProvider();
-            byte[] tdesKey = hashProvider.ComputeHash(utf8.GetBytes(key));
-            TripleDESCryptoServiceProvider tdesAlgorithm = new TripleDESCryptoServiceProvider();
-            tdesAlgorithm.Key = tdesKey;
-            tdesAlgorithm.Mode = CipherMode.ECB;
-            tdesAlgorithm.Padding = PaddingMode.PKCS7;
-            byte[] dataToDecrypt = Convert.FromBase64String(str);
             try
             {
-                ICryptoTransform decryptor = tdesAlgorithm.CreateDecryptor();
-                results = decryptor.TransformFinalBlock(dataToDecrypt, 0, dataToDecrypt.Length);
+                if (String.IsNullOrEmpty(str) || String.IsNullOrWhiteSpace(str))
+                {
+                    return "";
+                }
+                byte[] results;
+                System.Text.UTF8Encoding utf8 = new System.Text.UTF8Encoding();
+                MD5CryptoServiceProvider hashProvider = new MD5CryptoServiceProvider();
+                byte[] tdesKey = hashProvider.ComputeHash(utf8.GetBytes(key));
+                TripleDESCryptoServiceProvider tdesAlgorithm = new TripleDESCryptoServiceProvider();
+                tdesAlgorithm.Key = tdesKey;
+                tdesAlgorithm.Mode = CipherMode.ECB;
+                tdesAlgorithm.Padding = PaddingMode.PKCS7;
+                byte[] dataToDecrypt = Convert.FromBase64String(str);
+                try
+                {
+                    ICryptoTransform decryptor = tdesAlgorithm.CreateDecryptor();
+                    results = decryptor.TransformFinalBlock(dataToDecrypt, 0, dataToDecrypt.Length);
+                }
+                finally
+                {
+                    tdesAlgorithm.Clear();
+                    hashProvider.Clear();
+                }
+                return utf8.GetString(results);
             }
-            finally
+            catch
             {
-                tdesAlgorithm.Clear();
-                hashProvider.Clear();
+                return str;
             }
-            return utf8.GetString(results);
         }
     }
 }
