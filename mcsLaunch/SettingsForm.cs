@@ -18,6 +18,7 @@ namespace mcsLaunch
         private void LoadSettings()
         {
             Settings = MainForm.Settings;
+            this.Text = "mcsLaunch Settings " + Settings.VersionString;
             checknow = false;
             chkRemUser.Checked = Settings.RememberUsername;
             if (chkRemUser.Checked)

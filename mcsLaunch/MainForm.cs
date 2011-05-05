@@ -11,6 +11,7 @@ namespace mcsLaunch
     public partial class MainForm : Form
     {
         public static Settings Settings = new Settings();
+        //public static Updater Updater = new Updater();
 
         public MainForm(string[] args)
         {

@@ -16,6 +16,7 @@ namespace mcsLaunch
         public HelpForm()
         {
             InitializeComponent();
+            this.Text = "mcsLaunch Help " + Settings.VersionString;
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
